@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tweetBox"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ComposeActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/app_bar"
+            style="@style/Widget.Shrine.Toolbar"
+            android:background="#25A4F3"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/icon"
+            app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Button"
+            app:title="Compose" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_background"
+        android:layout_width="66dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/davies"
+        app:civ_border_color="#25A4F3"
+        app:civ_border_width="2dp"
+        app:layout_constraintEnd_toStartOf="@+id/tvUsername"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        app:srcCompat="@android:color/black" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textContainer"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:hapticFeedbackEnabled="true"
+        android:textColorHint="#00BCD4"
+        app:boxStrokeColor="#25A4F3"
+        app:counterEnabled="true"
+        app:counterMaxLength="280"
+        app:endIconDrawable="@drawable/ic_vector_close"
+        app:endIconMode="clear_text"
+        app:endIconTint="#00BCD4"
+        app:helperTextTextColor="#00BCD4"
+        app:hintTextColor="#00BCD4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/profile_background"
+        app:layout_constraintTop_toTopOf="@+id/profile_background">
+
+        <EditText
+            android:id="@+id/tvStatus"
+            android:allowUndo="true"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="What's happening?"
+            android:textColorHint="#00BCD4" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/tweetBtn"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:onClick="onClickTweet"
+        android:shadowColor="#00ECE6E6"
+        android:text="Tweet"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+        android:textColor="#00BCD4"
+        app:layout_constraintEnd_toEndOf="@+id/textContainer"
+        app:layout_constraintTop_toBottomOf="@+id/textContainer"
+        app:rippleColor="#03A9F4"
+        app:strokeColor="#00BCD4" />
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
